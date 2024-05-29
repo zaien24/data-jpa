@@ -35,4 +35,6 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     Optional<Member> findOptionalByUsername(String username); //단건 Optional
 
 
+
+
 }
