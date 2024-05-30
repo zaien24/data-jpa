@@ -192,10 +192,11 @@ class MemberRepositoryTest {
 
         //when
         Page<Member> page = memberRepository.findByAge(age, pageRequest);
+        //Slice<Member> page = memberRepository.findByAge(age, pageRequest);
 
         //then
         List<Member> content = page.getContent();
-        long totalElements = page.getTotalElements();
+        //long totalElements = page.getTotalElements();
 
 //        for (Member member : content) {
 //            System.out.println("member = " + member);
