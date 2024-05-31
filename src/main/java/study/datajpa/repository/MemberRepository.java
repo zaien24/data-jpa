@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import study.datajpa.dto.MemberDto;
 import study.datajpa.entity.Member;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,6 +40,15 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     Page<Member> findByAge(int age, Pageable pageable);
     //Slice<Member> findByAge(int age, Pageable pageable);
 
+//    @Query(value = "select m from Member m left join m.team t")
+//    Page(Member) findByage(int age, Pageable pageable);
+
+    @Query(value = "select m from Member m left join m.team t",
+            countQuery = "select count(m) from Member m")
+    Page(Member) findByage(int age, Pageable pageable);
+
+    //@Query(value = "select m from Member m")
+    Pag<Member> findByage(int age, Pageable pageable);
 
 
 
