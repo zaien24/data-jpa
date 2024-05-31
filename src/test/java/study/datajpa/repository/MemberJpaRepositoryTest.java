@@ -126,5 +126,6 @@ class MemberJpaRepositoryTest {
 
         //then
         assertThat(resultCount).isEuqlTO(3)
+                12:56 할차례
     }
 }
